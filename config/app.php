@@ -165,7 +165,6 @@ return [
         /*
          * Package Service Providers...
          */
-        \Spatie\Permission\PermissionServiceProvider::class,
         \Flugg\Responder\ResponderServiceProvider::class,
         /*
          * Application Service Providers...
