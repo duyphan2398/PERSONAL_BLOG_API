@@ -1,8 +1,9 @@
 <?php
 
 use App\Http\Controllers\API\AdminController;
+use App\Http\Controllers\API\PostController;
 use App\Http\Controllers\API\Auth\AuthController;
-use App\Http\Controllers\API\UploadFileDriveController;
+use App\Http\Controllers\API\UploadFileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// CMS
 Route::group(['prefix' => 'auth'], function () {
     Route::post('login', [AuthController::class, 'login']);
 });
@@ -26,5 +28,6 @@ Route::group(['middleware' => 'auth:api'], function () {
     });
 
     Route::apiResource('admins', AdminController::class);
-    Route::post('upload', UploadFileDriveController::class);
+    Route::apiResource('posts', PostController::class);
+    Route::post('upload', UploadFileController::class);
 });

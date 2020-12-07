@@ -24,8 +24,8 @@ class UpdateAdminRequest extends FormRequest
     public function rules()
     {
         return [
-            'role_id'               => 'required|int|exists:roles,id',
-            'name'                  => 'sometimes|string|max:100',
+            'name'                  => 'nullable|string|max:100',
+            'login_id'              => 'required|string|max:100|regex:/^[a-zA-Z0-9]+$/',
             'password'              => [
                 'nullable',
                 'required_unless:password,',
@@ -33,10 +33,9 @@ class UpdateAdminRequest extends FormRequest
                 'confirmed',
                 'min:6',
                 'max:100',
-                "regex:/^[a-zA-Z0-9!@#$%^&*()_+\-=\[\]{};'`:\"\\|,.<>\/?]+$/",
+                "regex:/^[a-zA-Z0-9]+$/",
             ],
-            'password_confirmation' => 'nullable|string',
-            'is_active'             => 'sometimes|boolean',
+            'password_confirmation' => 'nullable|string'
         ];
     }
 }

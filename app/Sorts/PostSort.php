@@ -5,7 +5,7 @@ namespace App\Sorts;
 use App\Sorts\Sort;
 use App\Traits\CommonSort;
 
-class NewsSort extends Sort {
+class PostSort extends Sort {
     use CommonSort;
 
     /**

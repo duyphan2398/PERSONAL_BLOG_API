@@ -2,7 +2,7 @@
 
 namespace App\Filters;
 
-class NewsFilter extends Filter
+class CategoryFilter extends Filter
 {
     /**
      * @param $title
