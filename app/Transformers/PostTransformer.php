@@ -13,7 +13,9 @@ class PostTransformer extends Transformer
      *
      * @var array
      */
-    protected $load = [];
+    protected $load = [
+        'admin' => AdminTransformer::class
+    ];
 
 
     public function transform(Post $post)
@@ -23,6 +25,7 @@ class PostTransformer extends Transformer
             'title'                  => (string) $post->text,
             'content'                => (string) $post->content,
             'file'                   => (string) optional($post->file)->path,
+            'is_active'              => (int) $post->is_active,
             'created_at'             => (string) $post->created_at,
             'updated_at'             => (string) $post->updated_at
         ];
