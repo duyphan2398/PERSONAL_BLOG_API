@@ -42,4 +42,8 @@ class Post extends BaseModel
     public function file(){
         return $this->belongsTo(File::class);
     }
+
+    public function admin(){
+        return $this->belongsTo(Admin::class);
+    }
 }
