@@ -22,7 +22,7 @@ class PostTransformer extends Transformer
     {
         return [
             'id'                     => (string) $post->id,
-            'title'                  => (string) $post->text,
+            'title'                  => (string) $post->title,
             'content'                => (string) $post->content,
             'file'                   => (string) optional($post->file)->path,
             'is_active'              => (int) $post->is_active,
