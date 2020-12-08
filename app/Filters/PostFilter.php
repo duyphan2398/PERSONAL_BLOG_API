@@ -45,14 +45,13 @@ class PostFilter extends Filter
     }
 
     /**
-     *
-     * @param $category_id
-     * @return \App\Builders\Builder
+     * @param $categoryId
+     * @return \App\Builders\Builder|\Illuminate\Database\Eloquent\Builder
      */
     public function categoryId($categoryId)
     {
         return $this->query->whereHas('postCategories', function ($query) use ($categoryId){
-            $query->where('category_id', $categoryId);
+            $query->whereIn('category_id', $categoryId);
         });
     }
 }
