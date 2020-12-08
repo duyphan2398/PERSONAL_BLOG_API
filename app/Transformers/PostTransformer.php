@@ -25,12 +25,21 @@ class PostTransformer extends Transformer
             'title'                  => (string) $post->title,
             'content'                => (string) $post->content,
             'file'                   => (string) optional($post->file)->path,
+            'categories'             => (array) $this->getCategory($post),
             'is_active'              => (int) $post->is_active,
             'created_at'             => (string) $post->created_at,
             'updated_at'             => (string) $post->updated_at
         ];
     }
 
+    public function getCategory(Post $post){
+        $data = [];
+        foreach ($post->postCategories as $key => $postCategory){
+            $data[$key] = (new CategoryTransformer())->transform($postCategory->category);
+        }
+
+        return $data;
+    }
 
     function extendResignedURL($text)
     {
