@@ -4,6 +4,7 @@ use App\Http\Controllers\API\AdminController;
 use App\Http\Controllers\API\PostController;
 use App\Http\Controllers\API\Auth\AuthController;
 use App\Http\Controllers\API\UploadFileController;
+use App\Http\Controllers\API\CategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,5 +30,6 @@ Route::group(['middleware' => 'auth:api'], function () {
 
     Route::apiResource('admins', AdminController::class);
     Route::apiResource('posts', PostController::class);
+    Route::apiResource('categories', CategoryController::class);
     Route::post('upload', UploadFileController::class);
 });
