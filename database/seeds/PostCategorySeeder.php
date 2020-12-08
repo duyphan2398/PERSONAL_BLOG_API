@@ -14,7 +14,7 @@ class PostCategorySeeder extends Seeder
     {
         $posts =  Post::all();
         $posts->each(function ($post){
-            $randomCategory = Category::query()->inRandomOrder()->take(random_int(1, 3));
+            $randomCategory = Category::query()->inRandomOrder()->take(random_int(1, 3))->get();
             $randomCategory->each(function ($category) use ($post){
                 $post->postCategories()->create(['category_id' => $category->id]);
             });
