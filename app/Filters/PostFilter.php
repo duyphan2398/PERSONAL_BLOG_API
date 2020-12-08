@@ -25,31 +25,13 @@ class PostFilter extends Filter
     }
 
     /**
-     * @param $isPushed
-     * @return \App\Builders\Builder
-     */
-    public function isPushed($isPushed)
-    {
-        return $this->query->where('is_pushed', $isPushed);
-    }
-
-    /**
-     * @param $isPreview
-     * @return \App\Builders\Builder
-     */
-    public function isPreview($isPreview)
-    {
-        return $this->query->where('is_preview', $isPreview);
-    }
-
-    /**
      * @param $startTime
      * @return \App\Builders\Builder
      */
     public function publishStartDatetime($startTime)
     {
         return $this->query
-            ->whereDateRange('publish_start_datetime', ['from' => $startTime]);
+            ->whereDateRange('created_at', ['from' => $startTime]);
     }
 
     /**
@@ -59,7 +41,7 @@ class PostFilter extends Filter
     public function publishEndDatetime($endTime)
     {
         return $this->query
-            ->whereDateRange('publish_end_datetime', ['to' => $endTime]);
+            ->whereDateRange('created_at', ['to' => $endTime]);
     }
 
     /**
@@ -69,6 +51,8 @@ class PostFilter extends Filter
      */
     public function categoryId($categoryId)
     {
-        return $this->query->where('category_id', $categoryId);
+        return $this->query->whereHas('postCategories', function ($query) use ($categoryId){
+            $query->where('category_id', $categoryId);
+        });
     }
 }
