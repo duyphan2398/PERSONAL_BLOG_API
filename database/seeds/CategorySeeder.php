@@ -12,10 +12,10 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        foreach($this->categories() as $category){
+        foreach($this->categories() as $name => $displayName){
             Category::query()->create([
-                'name'          => ucwords($category),
-                'display_name'  => strtoupper($category),
+                'name'          => $name,
+                'display_name'  => $displayName,
                 'file_id'       => null
             ]);
         }
@@ -24,10 +24,10 @@ class CategorySeeder extends Seeder
 
     public function categories(){
         return [
-            'My stories',
-            'Blogs',
-            'Projects',
-            'Services'
+            'my_stories'    => 'My Stories',
+            'blogs'         => 'Blogs',
+            'projects'      => 'Projects',
+            'services'      => 'Services'
         ];
     }
 }
