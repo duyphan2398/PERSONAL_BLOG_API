@@ -26,7 +26,7 @@ class PostTransformer extends Transformer
             'content'                => (string) $post->content,
             'file'                   => (string) optional($post->file)->path,
             'categories'             => (array) $this->getCategory($post),
-            'is_active'              => (int) $post->is_active,
+            'is_active'              => (bool) $post->is_active,
             'created_at'             => (string) $post->created_at,
             'updated_at'             => (string) $post->updated_at
         ];
