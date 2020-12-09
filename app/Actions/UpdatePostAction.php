@@ -19,8 +19,8 @@ class UpdatePostAction
         $post->update(Arr::except($data, ['file', 'category']));
         // update category
         $post->postCategories()->delete();
-        foreach ($data['category'] as $category){
-            $post->postCategories()->create(['category_id' => $category->id]);
+        foreach (json_decode($data['category']) as $categoryId){
+            $post->postCategories()->create(['category_id' => $categoryId]);
         }
 
         // update thumbnail

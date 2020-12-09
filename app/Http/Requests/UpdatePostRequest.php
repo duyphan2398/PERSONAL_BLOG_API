@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\CheckCategoriesExistRule;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdatePostRequest extends FormRequest
@@ -24,8 +25,7 @@ class UpdatePostRequest extends FormRequest
     public function rules()
     {
         return [
-            'category'           => 'required|array',
-            'category.*.id'      => 'required|string|exists:category,id',
+            'category'           =>  ['required',new CheckCategoriesExistRule()],
             'title'              => 'required|string',
             'content'            => 'required|string',
             'file'               => 'nullable|file|image|mimes:jpg,jpeg,png|max:102400',
