@@ -17,6 +17,7 @@ class CreateCategoriesTable extends Migration
             $table->uuid('id')->primary();
             $table->string('name')->nullable();
             $table->string('display_name')->nullable();
+            $table->string('color')->default('#000000');
             $table->uuid('file_id')->nullable();
         });
     }

@@ -25,8 +25,8 @@ class UpdatePostRequest extends FormRequest
     public function rules()
     {
         return [
-            'categories'           =>  ['required',new CheckCategoriesExistRule()],
-            'title'              => 'required|string',
+            'categories'         =>  ['required',new CheckCategoriesExistRule()],
+            'title'              => 'required|string|max:100000',
             'content'            => 'required|string',
             'file'               => 'nullable|file|image|mimes:jpg,jpeg,png|max:102400',
             'is_active'          => 'required|in:0,1'

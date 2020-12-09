@@ -23,7 +23,8 @@ class Category extends BaseModel
         'id',
         'name',
         'display_name',
-        'file_id'
+        'file_id',
+        'color'
     ];
 
     public function postCategories(){

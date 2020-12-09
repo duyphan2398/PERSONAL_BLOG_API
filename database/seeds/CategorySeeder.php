@@ -12,11 +12,13 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
+
         foreach($this->categories() as $name => $displayName){
             Category::query()->create([
                 'name'          => $name,
                 'display_name'  => $displayName,
-                'file_id'       => null
+                'file_id'       => null,
+                'color'         => \Faker\Provider\id_ID\Color::hexColor()
             ]);
         }
 

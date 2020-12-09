@@ -31,8 +31,7 @@ class UpdatePostAction
             }
 
             $destinationPath = 'POST/THUMBNAIL/'.$post->id.'/'.Carbon::today()->format('d-m-y');
-            $profileImage = Str::random(20).'_'.Carbon::now()
-                                                      ->format('d-m-y-h-i').'.'.$data['file']->getClientOriginalExtension();
+            $profileImage = Str::random(20).'_'.Carbon::now()->format('d-m-y-h-i').'.'.$data['file']->getClientOriginalExtension();
             $path = $data['file']->storeAs($destinationPath, $profileImage, 'public');
             if ($path) {
                 $uploadFile = pathinfo($path);
@@ -40,8 +39,8 @@ class UpdatePostAction
                     'path'        => $path,
                     'name'        => $data['file']->getClientOriginalName(),
                     'upload_name' => $uploadFile['basename'],
-                    'type'        => $data['type'],
-                    'target'      => $data['target'],
+                    'type'        => 'IMAGE',
+                    'target'      => 'POST',
                     'size'        => request()->file('file')->getSize(),
                     'extension'   => $uploadFile['extension'],
                     'mime_type'   => $data['file']->getClientMimeType()
