@@ -16,10 +16,10 @@ class UpdatePostAction
 
     public function execute(array $data, Post $post)
     {
-        $post->update(Arr::except($data, ['file', 'category']));
+        $post->update(Arr::except($data, ['file', 'categories']));
         // update category
         $post->postCategories()->delete();
-        foreach (json_decode($data['category']) as $categoryId){
+        foreach (json_decode($data['categories']) as $categoryId){
             $post->postCategories()->create(['category_id' => $categoryId]);
         }
 

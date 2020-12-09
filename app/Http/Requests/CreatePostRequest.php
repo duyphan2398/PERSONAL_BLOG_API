@@ -25,7 +25,7 @@ class CreatePostRequest extends FormRequest
     public function rules()
     {
         return [
-            'category'           =>  ['required',new CheckCategoriesExistRule()],
+            'categories'           =>  ['required',new CheckCategoriesExistRule()],
             'title'              => 'required|string|max:100000',
             'content'            => 'required|string',
             'file'               => 'nullable|file|image|mimes:jpg,jpeg,png|max:102400',

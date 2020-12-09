@@ -12,10 +12,10 @@ class CreatePostAction
 {
     public function execute(array $data)
     {
-        $post = Post::query()->create(Arr::except($data, ['file', 'category']));
+        $post = Post::query()->create(Arr::except($data, ['file', 'categories']));
 
         // save category
-         foreach (json_decode($data['category']) as $categoryId){
+         foreach (json_decode($data['categories']) as $categoryId){
              $post->postCategories()->create(['category_id' => $categoryId]);
          }
 
