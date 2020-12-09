@@ -35,7 +35,7 @@ class PostTransformer extends Transformer
     public function getCategory(Post $post){
         $data = [];
         foreach ($post->postCategories as $key => $postCategory){
-            $data[$key] = (new CategoryTransformer())->transform($postCategory->category);
+            $data[$key] = $postCategory->category_id;
         }
 
         return $data;

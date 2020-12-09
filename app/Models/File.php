@@ -35,7 +35,7 @@ class File extends BaseModel
     ];
 
     public function getPathAttribute($value){
-        return  config('app.url').'/'.$value;
+        return  config('app.url').'/resource/asset/'.$value;
     }
     public $timestamps = true;
 }

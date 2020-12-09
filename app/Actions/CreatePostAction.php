@@ -30,8 +30,8 @@ class CreatePostAction
                     'path'        => $path,
                     'name'        => $data['file']->getClientOriginalName(),
                     'upload_name' => $uploadFile['basename'],
-                    'type'        => $data['type'],
-                    'target'      => $data['target'],
+                    'type'        => 'IMAGE',
+                    'target'      => 'POST',
                     'size'        => request()->file('file')->getSize(),
                     'extension'   => $uploadFile['extension'],
                     'mime_type'   => $data['file']->getClientMimeType()
