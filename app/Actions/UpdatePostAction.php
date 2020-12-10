@@ -24,12 +24,12 @@ class UpdatePostAction
         }
 
         // update thumbnail
-        if (Arr::get($data, 'file')) {
-            if ($post->file){
-                $post->file()->delete();
-                Storage::disk('public')->deleteDirectory('POST/THUMBNAIL/'.$post->id);
-            }
+        if ($post->file){
+            $post->file()->delete();
+            Storage::disk('public')->deleteDirectory('POST/THUMBNAIL/'.$post->id);
+        }
 
+        if (Arr::get($data, 'file')) {
             $destinationPath = 'POST/THUMBNAIL/'.$post->id.'/'.Carbon::today()->format('d-m-y');
             $profileImage = Str::random(20).'_'.Carbon::now()->format('d-m-y-h-i').'.'.$data['file']->getClientOriginalExtension();
             $path = $data['file']->storeAs($destinationPath, $profileImage, 'public');
