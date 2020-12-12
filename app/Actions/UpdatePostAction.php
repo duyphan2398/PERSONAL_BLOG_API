@@ -24,7 +24,7 @@ class UpdatePostAction
         }
 
         // update thumbnail
-        if ($post->file){
+        if ($post->file && Arr::get($data, 'file')){
             $post->file()->delete();
             Storage::disk('public')->deleteDirectory('POST/THUMBNAIL/'.$post->id);
         }
