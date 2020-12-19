@@ -49,10 +49,15 @@ class PostController extends ApiController
         return $this->httpCreated($post, PostTransformer::class);
     }
 
-
-    public function update(UpdatePostRequest $request, Post $post, UpdatePostAction $action)
+    /**
+     * @param \App\Http\Requests\UpdatePostRequest $updatePostRequest
+     * @param \App\Models\Post $post
+     * @param \App\Actions\UpdatePostAction $updatePostAction
+     * @return \Flugg\Responder\Http\Responses\SuccessResponseBuilder|\Illuminate\Http\JsonResponse
+     */
+    public function update(UpdatePostRequest $updatePostRequest, Post $post, UpdatePostAction $updatePostAction)
     {
-        $action->execute($request->validated(), $post);
+        $updatePostAction->execute($updatePostRequest->validated(), $post);
 
         return $this->httpNoContent();
     }

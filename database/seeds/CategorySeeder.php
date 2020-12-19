@@ -17,6 +17,8 @@ class CategorySeeder extends Seeder
             Category::query()->create([
                 'name'          => $name,
                 'display_name'  => $displayName,
+                'title'         => \Faker\Provider\Uuid::uuid(),
+                'content'       => 'this is logan',
                 'file_id'       => null,
                 'color'         => \Faker\Provider\id_ID\Color::hexColor()
             ]);

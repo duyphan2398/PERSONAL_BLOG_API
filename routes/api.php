@@ -31,6 +31,6 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::apiResource('admins', AdminController::class);
     Route::apiResource('posts', PostController::class)->except('update');
     Route::post('posts/{post}', [PostController::class, 'update']);
-    Route::apiResource('categories', CategoryController::class);
+    Route::apiResource('categories', CategoryController::class)->only(['index', 'show', 'update']);
     Route::post('upload', UploadFileController::class);
 });

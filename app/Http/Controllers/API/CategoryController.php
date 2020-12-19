@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Actions\UpdateCategoryAction;
 use App\Actions\UpdatePostAction;
 use App\Filters\CategoryFilter;
+use App\Http\Requests\UpdateCategoryRequest;
 use App\Http\Requests\UpdatePostRequest;
 use App\Models\Category;
 use App\Models\Post;
@@ -24,6 +26,11 @@ class CategoryController extends ApiController
         parent::__construct($request);
     }
 
+    /**
+     * @param \App\Filters\CategoryFilter $categoryFilter
+     * @param \App\Sorts\CategorySort $categorySort
+     * @return \Flugg\Responder\Http\Responses\SuccessResponseBuilder|\Illuminate\Http\JsonResponse
+     */
     public function index(CategoryFilter $categoryFilter, CategorySort $categorySort)
     {
         return $this->httpOK(
@@ -33,5 +40,28 @@ class CategoryController extends ApiController
                 ->paginate($this->per_page),
             CategoryTransformer::class
         );
+    }
+
+    /**
+     * @param \App\Models\Category $category
+     * @return \Flugg\Responder\Http\Responses\SuccessResponseBuilder|\Illuminate\Http\JsonResponse
+     */
+    public function show(Category $category){
+        {
+            return $this->httpOK($category, CategoryTransformer::class);
+        }
+    }
+
+    /**
+     * @param \App\Http\Requests\UpdateCategoryRequest $updateCategoryRequest
+     * @param \App\Models\Category $category
+     * @param \App\Actions\UpdateCategoryAction $updateCategoryAction
+     * @return \Flugg\Responder\Http\Responses\SuccessResponseBuilder|\Illuminate\Http\JsonResponse
+     */
+    public function update(UpdateCategoryRequest $updateCategoryRequest, Category $category, UpdateCategoryAction $updateCategoryAction)
+    {
+        $updateCategoryAction->execute($updateCategoryRequest->validated(), $category);
+
+        return $this->httpNoContent();
     }
 }
