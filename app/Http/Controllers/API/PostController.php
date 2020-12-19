@@ -11,6 +11,7 @@ use App\Models\Post;
 use App\Sorts\PostSort;
 use App\Transformers\PostTransformer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class PostController extends ApiController
@@ -57,9 +58,16 @@ class PostController extends ApiController
      */
     public function update(UpdatePostRequest $updatePostRequest, Post $post, UpdatePostAction $updatePostAction)
     {
-        $updatePostAction->execute($updatePostRequest->validated(), $post);
+        DB::beginTransaction();
+        try {
+            $updatePostAction->execute($updatePostRequest->validated(), $post);
+            DB::commit();
+            return $this->httpNoContent();
+        }catch (\Exception $exception){
+            DB::rollBack();
+            return $this->httpBadRequest(['message' => $exception->getMessage()]);
+        }
 
-        return $this->httpNoContent();
     }
 
 
@@ -71,10 +79,17 @@ class PostController extends ApiController
 
     public function destroy(Post $post)
     {
-        Storage::disk('public')->deleteDirectory('POST/THUMBNAIL/'.$post->id);
-        $post->postCategories()->delete();
-        $post->delete();
+        DB::beginTransaction();
+        try {
+            Storage::disk('public')->deleteDirectory('POST/THUMBNAIL/'.$post->id);
+            $post->postCategories()->delete();
+            $post->delete();
+            DB::commit();
+            return $this->httpNoContent();
+        }catch (\Exception $exception){
+            DB::rollBack();
+            return $this->httpBadRequest(['message' => $exception->getMessage()]);
+        }
 
-        return $this->httpNoContent();
     }
 }

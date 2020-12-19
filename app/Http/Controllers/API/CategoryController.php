@@ -13,6 +13,7 @@ use App\Sorts\CategorySort;
 use App\Transformers\CategoryTransformer;
 use App\Transformers\PostTransformer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CategoryController extends ApiController
 {
@@ -60,8 +61,16 @@ class CategoryController extends ApiController
      */
     public function update(UpdateCategoryRequest $updateCategoryRequest, Category $category, UpdateCategoryAction $updateCategoryAction)
     {
-        $updateCategoryAction->execute($updateCategoryRequest->validated(), $category);
+        DB::beginTransaction();
+        try {
+            $updateCategoryAction->execute($updateCategoryRequest->validated(), $category);
 
-        return $this->httpNoContent();
+            DB::commit();
+            return $this->httpNoContent();
+        }catch (\Exception $exception){
+            DB::rollBack();
+            return $this->httpBadRequest(['message' => $exception->getMessage()]);
+        }
+
     }
 }

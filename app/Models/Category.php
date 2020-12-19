@@ -23,6 +23,8 @@ class Category extends BaseModel
         'id',
         'name',
         'display_name',
+        'title',
+        'content',
         'file_id',
         'color'
     ];

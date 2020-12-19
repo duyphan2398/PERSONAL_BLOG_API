@@ -24,7 +24,7 @@ class UpdateCategoryAction
         }
 
         if (Arr::get($data, 'file')) {
-            $destinationPath = 'POST/THUMBNAIL/'.$category->id.'/'.Carbon::today()->format('d-m-y');
+            $destinationPath = 'CATEGORY/THUMBNAIL/'.$category->id.'/'.Carbon::today()->format('d-m-y');
             $profileImage = Str::random(20).'_'.Carbon::now()->format('d-m-y-h-i').'.'.$data['file']->getClientOriginalExtension();
             $path = $data['file']->storeAs($destinationPath, $profileImage, 'public');
             if ($path) {

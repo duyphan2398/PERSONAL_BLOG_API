@@ -28,6 +28,8 @@ class CategoryTransformer extends Transformer
             'id'            => (string) $category->id,
             'name'          => (string) $category->name,
             'display_name'  => (string) $category->display_name,
+            'title'         => (string) $category->title,
+            'content'       => (string) $category->content,
             'file'          => (string) optional($category->file)->path,
             'color'         => (string) $category->color
         ];
