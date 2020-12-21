@@ -35,3 +35,5 @@ Route::group(['middleware' => 'auth:api'], function () {
     Route::post('categories/{category}', [CategoryController::class, 'update']);
     Route::post('upload', UploadFileController::class);
 });
+
+// Blog Page
