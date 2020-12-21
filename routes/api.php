@@ -29,11 +29,12 @@ Route::group(['middleware' => 'auth:api'], function () {
     });
 
     Route::apiResource('admins', AdminController::class);
-    Route::apiResource('posts', PostController::class)->except('update');
+    Route::apiResource('posts', PostController::class)->except(['index', 'update']);
     Route::post('posts/{post}', [PostController::class, 'update']);
-    Route::apiResource('categories', CategoryController::class)->only(['index', 'show']);
     Route::post('categories/{category}', [CategoryController::class, 'update']);
     Route::post('upload', UploadFileController::class);
 });
 
-// Blog Page
+Route::get('posts', [PostController::class, 'index']);
+Route::get('posts/{post:slug}', [PostController::class, 'showWithSlug']);
+Route::apiResource('categories', CategoryController::class)->only(['index', 'show']);

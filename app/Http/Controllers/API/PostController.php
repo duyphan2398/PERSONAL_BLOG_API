@@ -92,4 +92,16 @@ class PostController extends ApiController
         }
 
     }
+
+    /**
+     * @param $slug
+     * @return \Flugg\Responder\Http\Responses\SuccessResponseBuilder|\Illuminate\Http\JsonResponse
+     */
+    public function showWithSlug($slug){
+        $post = Post::query()->where('is_active', 1)->firstWhere('slug', $slug);
+        if ($post){
+            return $this->httpOK($post, PostTransformer::class);
+        }
+        return $this->httpNotFound();
+    }
 }

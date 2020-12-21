@@ -32,11 +32,13 @@
     <script src="{!! asset('js/clean-blog.min.js') !!}"></script>
 
     @yield('css')
-    @yield('script')
+
 </head>
 <body>
     @include('layouts.partials.nav')
     @yield('body')
     @include('layouts.partials.footer')
+
+    @yield('script')
 </body>
 </html>

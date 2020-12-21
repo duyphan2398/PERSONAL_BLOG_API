@@ -22,9 +22,12 @@ class Post extends BaseModel
     protected $fillable = [
         'id',
         'title',
+        'short_title',
+        'short_content',
         'content',
         'admin_id',
         'file_id',
+        'slug',
         'is_active',
         'created_at',
         'updated_at'
