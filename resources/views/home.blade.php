@@ -14,6 +14,7 @@
 
 @section('body')
     <!-- Page Header -->
+    {{ $category['id'] }}
     <header id="header" class="masthead" style="">
         <div class="overlay"></div>
         <div class="container">
@@ -58,14 +59,14 @@
                 </div>
                 <hr>
                 {{--LOAD POST --}}
-
+            </div>
+            <div class="w-100 col-11" style="text-align: center;">
+                <div id="more" style="display: none">
+                    <img src="{{ asset('images/loading.gif') }}" alt="loading..." alt="">
+                </div>
             </div>
 
-            <div id="more" class="d-flex justify-content-center col-11" style="display: none;">
-                <img src="{{ asset('images/loading.gif') }}"  alt="loading..." alt="">
-            </div>
         </div>
     </div>
-
     <hr>
 @endsection

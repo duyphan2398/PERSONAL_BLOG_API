@@ -28,10 +28,12 @@ class CategorySeeder extends Seeder
 
     public function categories(){
         return [
+            'home'          => 'Home',
             'my_stories'    => 'My Stories',
             'blogs'         => 'Blogs',
             'projects'      => 'Projects',
-            'services'      => 'Services'
+            'services'      => 'Services',
+            'contact'       => 'Contacts'
         ];
     }
 }
