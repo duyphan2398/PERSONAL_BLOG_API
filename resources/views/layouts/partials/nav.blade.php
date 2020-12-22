@@ -8,22 +8,22 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
+                <li class="nav-item {{ (request()->is('/')) ? 'active' : '' }}">
                     <a class="nav-link" href="{{ url('/') }}">Home</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {{ (request()->is('stories')) ? 'active' : '' }}">
                     <a class="nav-link" href="{{ url('stories') }}">Stories</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('bogs') }}">Blogs</a>
+                <li class="nav-item {{ (request()->is('blogs')) ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ url('blogs') }}">Blogs</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {{ (request()->is('projects')) ? 'active' : '' }}">
                     <a class="nav-link" href="{{ url('projects') }}">Projects</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {{ (request()->is('services')) ? 'active' : '' }}">
                     <a class="nav-link" href="{{ url('services') }}">Services</a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item {{ (request()->is('contacts')) ? 'active' : '' }}">
                     <a class="nav-link" href="{{ url('contacts') }}">Contact Me</a>
                 </li>
             </ul>

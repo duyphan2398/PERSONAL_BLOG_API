@@ -12,7 +12,12 @@ class CreatePostAction
 {
     public function execute(array $data)
     {
-        $post = Post::query()->create(Arr::except($data, ['file', 'categories']));
+        $transformData = Arr::except($data, ['file', 'categories']);
+        $slug = Str::random(3).'-'.join('+',explode(' ', str_replace('/', '',Arr::get($transformData, 'short_title'))));
+        $transformData['slug'] = $slug;
+
+        $post = Post::query()->create($transformData);
+
 
         // save category
          foreach (json_decode($data['categories']) as $categoryId){

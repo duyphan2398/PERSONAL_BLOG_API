@@ -36,5 +36,5 @@ Route::group(['middleware' => 'auth:api'], function () {
 });
 
 Route::get('posts', [PostController::class, 'index']);
-Route::get('posts/{post:slug}', [PostController::class, 'showWithSlug']);
+Route::get('blogs/posts/{post:slug}', [PostController::class, 'showWithSlug']);
 Route::apiResource('categories', CategoryController::class)->only(['index', 'show']);

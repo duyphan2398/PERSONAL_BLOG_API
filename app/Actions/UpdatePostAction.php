@@ -16,7 +16,11 @@ class UpdatePostAction
 
     public function execute(array $data, Post $post)
     {
-        $post->update(Arr::except($data, ['file', 'categories']));
+        $transformData = Arr::except($data, ['file', 'categories']);
+        $slug = Str::random(3).'-'.join('+',explode(' ', str_replace('/', '',Arr::get($transformData, 'short_title'))));
+        $transformData['slug'] = $slug;
+
+        $post->update($transformData);
         // update category
         $post->postCategories()->delete();
         foreach (json_decode($data['categories']) as $categoryId){

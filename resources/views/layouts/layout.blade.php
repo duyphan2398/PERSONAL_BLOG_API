@@ -33,6 +33,20 @@
 
     @yield('css')
 
+    <style>
+        .active a {
+            font-weight: 100 !important;
+        }
+        .ql-video{
+            width: 100%;
+            height: 35vw;
+        }
+        .post-content img {
+            width: 100%;
+            height: 35vw;
+            object-fit: fill;
+        }
+    </style>
 </head>
 <body>
     @include('layouts.partials.nav')

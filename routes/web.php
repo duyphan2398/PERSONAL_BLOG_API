@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\StoryController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\ContactController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,4 +18,10 @@ use App\Http\Controllers\HomeController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('', [HomeController::class, 'index']);
+Route::get('{post:slug}',[HomeController::class, 'getPost']);
+Route::get('stories', [StoryController::class, 'index']);
+Route::get('blogs', [BlogController::class, 'index']);
+Route::get('projects', [ProjectController::class, 'index']);
+Route::get('services', [ServiceController::class, 'index']);
+Route::get('contacts', [ContactController::class, 'index']);
