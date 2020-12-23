@@ -30,7 +30,7 @@ class CreatePostRequest extends FormRequest
             'short_title'        => 'required|string|max:88',
             'content'            => 'required|string',
             'custom_slug'        => 'required|in:0,1',
-            'slug'               => 'required_if:custom_slug:1|nullable|string|max:200',
+            'slug'               => 'required_if:custom_slug,1|nullable|string|max:200',
             'short_content'      => 'required|string|max:200',
             'file'               => 'nullable|file|image|mimes:jpg,jpeg,png|max:102400',
             'is_active'          => 'required|in:0,1'
