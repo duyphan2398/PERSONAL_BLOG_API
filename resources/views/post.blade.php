@@ -5,15 +5,24 @@
 @endsection
 
 @section('meta')
-    <meta property="og:image:secure_url" content="{{ \Illuminate\Support\Arr::get($post, 'file') }}" />
-    <meta property="og:image:width" content="400" />
-    <meta property="og:image:height" content="300" />
-    <meta property="og:image:alt" content="{{ \Illuminate\Support\Arr::get($post, 'short_title') }}" />
-    <meta property="og:type" content="article" />
+    <meta property="og:image" content="{{\Illuminate\Support\Arr::get($post, 'file')}}" />
     <meta property="og:title" content="{{ \Illuminate\Support\Arr::get($post, 'short_title') }}" />
-    <meta property="og:article:published_time" content="{{ \Illuminate\Support\Arr::get($post, 'updated_at') }}" />
-    <meta property="og:article:section" content="{{ \Illuminate\Support\Arr::get($post, 'short_content') }}" />
-    <meta property="og:url" content="{{config('url.blog_url')}}/post/{{ \Illuminate\Support\Arr::get($post, 'slug') }}" />
+    <meta property="og:description" content="{{ \Illuminate\Support\Arr::get($post, 'short_content') }}" />
+    <meta property="og:image:width" content="474">
+    <meta property="og:image:height" content="220">
+    <meta property="og:image:alt" content="{{ \Illuminate\Support\Arr::get($post, 'short_title') }}" />
+    <meta name="description" content="{{ \Illuminate\Support\Arr::get($post, 'short_content') }}">
+    <meta name="image" content="{{\Illuminate\Support\Arr::get($post, 'file')}}">
+
+    <meta property="og:url" content="{{config('url.blog_url')}}/post/{{ \Illuminate\Support\Arr::get($post, 'slug') }}" data-vmid="og:url" data-vue-meta="true">
+    <meta property="og:sitename" content="tnguyenofficial.com" data-vmid="og:sitename" data-vue-meta="true">
+
+    <meta name="twitter:text:title" content="{{ \Illuminate\Support\Arr::get($post, 'short_title') }}">
+    <meta name="twitter:image" content="{{\Illuminate\Support\Arr::get($post, 'file')}}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="article:publisher" content="tnnguyenofficial">
+    <meta name="description" content="{{ \Illuminate\Support\Arr::get($post, 'short_content') }}">
+
 @endsection
 
 @section('script')

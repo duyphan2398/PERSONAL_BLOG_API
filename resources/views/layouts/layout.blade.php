@@ -9,7 +9,12 @@
         @yield('title')
     </title>
     <link rel="icon" href="{!! asset('images/logo.png') !!}"/>
+    <link rel="favicon" href="">
 
+
+    <meta name="keywords" content="TNGUYENOFFICIAL">
+    <meta name="keywords" content="TNGUYEN">
+    <meta property="fb:app_id" content="100002258842951" data-vmid="fb:app_id">
     {{--SEO--}}
     @yield('meta')
 
