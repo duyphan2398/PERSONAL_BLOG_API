@@ -14,7 +14,16 @@
 
     <meta name="keywords" content="TNGUYENOFFICIAL">
     <meta name="keywords" content="TNGUYEN">
-    <meta property="fb:app_id" content="100002258842951" data-vmid="fb:app_id">
+    <meta name="keywords" content="tnguyen">
+    <meta property="fb:pages" content="100002258842951" data-vmid="fb:pages">
+
+    <meta name="author" content="tnguyenofficial">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="vi_VN">
+
+    <meta name="copyright" content="TNGUYENOFFICIAL">
+    <meta name="author" content="TNGUYENOFFICIAL">
+    <meta name="GENERATOR" content="TNGUYENOFFICIAL">
     {{--SEO--}}
     @yield('meta')
 
