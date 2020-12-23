@@ -12,8 +12,14 @@ class CreatePostAction
 {
     public function execute(array $data)
     {
-        $transformData = Arr::except($data, ['file', 'categories']);
-        $slug = Str::random(3).'-'.join('+',explode(' ', str_replace('/', '',Arr::get($transformData, 'short_title'))));
+        $transformData = Arr::except($data, ['file', 'categories', 'slug', 'custom_slug']);
+
+        if ($data['custom_slug']){
+            $slug = Str::random(3).'-'.join('+',explode(' ', str_replace('/', '',Arr::get($transformData, $data['slug']))));
+        }else {
+            $slug = Str::random(3).'-'.join('+',explode(' ', str_replace('/', '',Arr::get($transformData, 'short_title'))));
+
+        }
         $transformData['slug'] = $slug;
 
         $post = Post::query()->create($transformData);

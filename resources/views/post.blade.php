@@ -4,6 +4,16 @@
     ABC
 @endsection
 
+@section('meta')
+    <meta property="og:image" content="{{ \Illuminate\Support\Arr::get($post, 'file') }}" />
+    <meta property="og:image:width" content="300" />
+    <meta property="og:image:height" content="300" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{{ \Illuminate\Support\Arr::get($post, 'short_title') }}" />
+    <meta property="og:description" content="{{ \Illuminate\Support\Arr::get($post, 'short_content') }}" />
+    <meta property="og:url" content="'{{config('url.blog_url')}}/post/'{{ \Illuminate\Support\Arr::get($post, 'slug') }}" />
+@endsection
+
 @section('script')
     <script src="{{ asset('js/controller/home.js') }}"></script>
 @endsection

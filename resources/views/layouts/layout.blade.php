@@ -10,6 +10,9 @@
     </title>
     <link rel="icon" href="{!! asset('images/logo.png') !!}"/>
 
+    {{--SEO--}}
+    @yield('meta')
+
     <!-- Bootstrap core CSS -->
     <link href="{!! asset('vendor/bootstrap/css/bootstrap.min.css') !!}" rel="stylesheet">
 

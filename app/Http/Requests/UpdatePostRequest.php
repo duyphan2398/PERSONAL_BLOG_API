@@ -27,9 +27,11 @@ class UpdatePostRequest extends FormRequest
         return [
             'categories'         =>  ['required',new CheckCategoriesExistRule()],
             'title'              => 'required|string|max:100000',
-            'short_title'        => 'required|string|max:200',
+            'short_title'        => 'required|string|max:88',
+            'custom_slug'        => 'required|in:0,1',
             'content'            => 'required|string',
-            'short_content'      => 'required|string|max:500',
+            'short_content'      => 'required|string|max:200',
+            'slug'               => 'required_if:custom_slug:1|nullable|string|max:200',
             'file'               => 'nullable|file|image|mimes:jpg,jpeg,png|max:102400',
             'is_active'          => 'required|in:0,1'
         ];

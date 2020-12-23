@@ -15,7 +15,7 @@ function getPostComponent (post) {
                           </div>
   
                           <div class="col-lg-8 col-12 order-lg-1">
-                              <a class="post-content" href="`+ window.location+post.slug+`">
+                              <a class="post-content" href="`+ window.location+'post/'+post.slug+`">
                                   <h2 class="post-title">
                                       ` + post.short_title + `
                                   </h2>
@@ -50,9 +50,12 @@ async function loadList () {
 
     let result = '';
     let data = JSON.parse(JSON.stringify(response.data.data));
-    data.forEach((post) => {
-      result += getPostComponent(post);
-    })
+    if (data.length){
+      data.forEach((post) => {
+        result += getPostComponent(post);
+      })
+    }
+
 
     $('#post-list').append(result);
 
