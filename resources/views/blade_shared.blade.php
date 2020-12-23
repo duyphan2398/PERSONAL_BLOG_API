@@ -10,6 +10,8 @@
 
 @section('meta')
     <meta property="og:image:secure_url" content="{{\Illuminate\Support\Arr::get($category, 'file')}}" />
+    <meta property="og:title" content="{{ \Illuminate\Support\Arr::get($category, 'title') }}" />
+    <meta property="og:description" content="{{ \Illuminate\Support\Arr::get($category, 'content') }}" />
 @endsection
 
 @section('css')

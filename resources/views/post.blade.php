@@ -5,9 +5,6 @@
 @endsection
 
 @section('meta')
-    https://www.api.tnguyenofficial.com/post/9gN-Qui+iste+magnam+aut+doloremque+dolorum.+Itaque+quia+nulla+blanditiis+autem+deleniti?fbclid=IwAR3A_EyJqZFAHi_xNiP67BlGFsvvQQkPbjXXba4V1jV8peZQQ-3_YZSejO4
-    https://www.api.tnguyenofficial.com/post/9gN-Qui+iste+magnam+aut+doloremque+dolorum.+Itaque+quia+nulla+blanditiis+autem+deleniti.
-    <pre>{{ \Illuminate\Support\Arr::get($post, 'file') }}</pre>
     <meta property="og:image:secure_url" content="{{ \Illuminate\Support\Arr::get($post, 'file') }}" />
     <meta property="og:image:width" content="400" />
     <meta property="og:image:height" content="300" />
