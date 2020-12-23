@@ -5,13 +5,18 @@
 @endsection
 
 @section('meta')
-    <meta property="og:image" content="{{ \Illuminate\Support\Arr::get($post, 'file') }}" />
-    <meta property="og:image:width" content="300" />
+    https://www.api.tnguyenofficial.com/post/9gN-Qui+iste+magnam+aut+doloremque+dolorum.+Itaque+quia+nulla+blanditiis+autem+deleniti?fbclid=IwAR3A_EyJqZFAHi_xNiP67BlGFsvvQQkPbjXXba4V1jV8peZQQ-3_YZSejO4
+    https://www.api.tnguyenofficial.com/post/9gN-Qui+iste+magnam+aut+doloremque+dolorum.+Itaque+quia+nulla+blanditiis+autem+deleniti.
+    <pre>{{ \Illuminate\Support\Arr::get($post, 'file') }}</pre>
+    <meta property="og:image:secure_url" content="{{ \Illuminate\Support\Arr::get($post, 'file') }}" />
+    <meta property="og:image:width" content="400" />
     <meta property="og:image:height" content="300" />
+    <meta property="og:image:alt" content="{{ \Illuminate\Support\Arr::get($post, 'short_title') }}" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="{{ \Illuminate\Support\Arr::get($post, 'short_title') }}" />
-    <meta property="og:description" content="{{ \Illuminate\Support\Arr::get($post, 'short_content') }}" />
-    <meta property="og:url" content="'{{config('url.blog_url')}}/post/'{{ \Illuminate\Support\Arr::get($post, 'slug') }}" />
+    <meta property="og:article:published_time" content="{{ \Illuminate\Support\Arr::get($post, 'updated_at') }}" />
+    <meta property="og:article:section" content="{{ \Illuminate\Support\Arr::get($post, 'short_content') }}" />
+    <meta property="og:url" content="{{config('url.blog_url')}}/post/{{ \Illuminate\Support\Arr::get($post, 'slug') }}" />
 @endsection
 
 @section('script')

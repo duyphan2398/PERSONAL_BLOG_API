@@ -8,6 +8,10 @@
     <script src="{{ asset('js/controller/script_shared.js') }}"></script>
 @endsection
 
+@section('meta')
+    <meta property="og:image:secure_url" content="{{\Illuminate\Support\Arr::get($category, 'file')}}" />
+@endsection
+
 @section('css')
 
 @endsection
