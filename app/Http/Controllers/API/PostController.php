@@ -42,6 +42,17 @@ class PostController extends ApiController
         );
     }
 
+    public function indexBlog(PostFilter $postFilter, PostSort $postSort){
+        return $this->httpOK(
+            Post::query()
+                ->where('is_active', 1)
+                ->filter($postFilter)
+                ->sortBy($postSort)
+                ->paginate($this->per_page),
+            PostTransformer::class
+        );
+    }
+
 
     public function store(CreatePostRequest $request, CreatePostAction $action)
     {
@@ -90,7 +101,6 @@ class PostController extends ApiController
             DB::rollBack();
             return $this->httpBadRequest(['message' => $exception->getMessage()]);
         }
-
     }
 
     /**

@@ -71,4 +71,14 @@ class CategoryFilter extends Filter
     {
         return $this->query->where('category_id', $categoryId);
     }
+
+    /**
+     *
+     * @param $categoryName
+     * @return \App\Builders\Builder
+     */
+    public function withoutCategoryName($categoryName)
+    {
+        return $this->query->whereNotIn('name', $categoryName);
+    }
 }

@@ -34,10 +34,13 @@ async function loadList () {
   //loading
   this.loading = true
   $('#more').show()
+  let categoryId = $('#story').attr('name');
+
   // load data
   await axios.get(location.origin + '/api/blog/posts', {
       params: {
         'sortBy[updated_at]': 'desc',
+        'filters[categoryId]': [categoryId],
         'per_page': perPage,
         'page': ++currentPage,
       },

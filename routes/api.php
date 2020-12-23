@@ -19,22 +19,25 @@ use Illuminate\Support\Facades\Route;
 */
 
 // CMS
-Route::group(['prefix' => 'auth'], function () {
-    Route::post('login', [AuthController::class, 'login']);
-});
-Route::group(['middleware' => 'auth:api'], function () {
+Route::group(['prefix' => 'cms'], function () {
     Route::group(['prefix' => 'auth'], function () {
-        Route::get('logout', [AuthController::class, 'logout']);
-        Route::get('profile', [AuthController::class, 'profile']);
+        Route::post('login', [AuthController::class, 'login']);
     });
+    Route::group(['middleware' => 'auth:api'], function () {
+        Route::group(['prefix' => 'auth'], function () {
+            Route::get('logout', [AuthController::class, 'logout']);
+            Route::get('profile', [AuthController::class, 'profile']);
+        });
 
-    Route::apiResource('admins', AdminController::class);
-    Route::apiResource('posts', PostController::class)->except(['index', 'update']);
-    Route::post('posts/{post}', [PostController::class, 'update']);
-    Route::post('categories/{category}', [CategoryController::class, 'update']);
-    Route::post('upload', UploadFileController::class);
+        Route::apiResource('admins', AdminController::class);
+        Route::apiResource('posts', PostController::class)->except(['update']);
+        Route::post('posts/{post}', [PostController::class, 'update']);
+        Route::apiResource('categories', CategoryController::class)->only(['index', 'show']);
+        Route::post('categories/{category}', [CategoryController::class, 'update']);
+        Route::post('upload', UploadFileController::class);
+    });
 });
 
-Route::get('posts', [PostController::class, 'index']);
-Route::get('blogs/posts/{post:slug}', [PostController::class, 'showWithSlug']);
-Route::apiResource('categories', CategoryController::class)->only(['index', 'show']);
+Route::group(['prefix' => 'blog'], function () {
+    Route::get('posts', [PostController::class, 'indexBlog']);
+});

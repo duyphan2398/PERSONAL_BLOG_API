@@ -10,7 +10,7 @@ class ServiceController extends Controller
 {
     public function index(){
         $category = Category::query()->firstWhere('name', 'services');
-        return view('services')->with([
+        return view('blade_shared')->with([
             'category' => (new CategoryTransformer)->transform($category)
         ]);
     }

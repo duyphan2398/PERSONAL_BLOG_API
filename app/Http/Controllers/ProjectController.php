@@ -10,7 +10,7 @@ class ProjectController extends Controller
 {
     public function index(){
         $category = Category::query()->firstWhere('name', 'projects');
-        return view('projects')->with([
+        return view('blade_shared')->with([
             'category' => (new CategoryTransformer)->transform($category)
         ]);
     }
