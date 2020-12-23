@@ -8,15 +8,15 @@
     <title>
         @yield('title')
     </title>
-    <link rel="icon" href="{!! asset('images/logo.png') !!}"/>
-    <link rel="favicon" href="">
+    <link rel="icon" href="#"/>
+    <link rel="favicon" href="#">
 
 
     <meta name="keywords" content="TNGUYENOFFICIAL">
     <meta name="keywords" content="TNGUYEN">
     <meta name="keywords" content="tnguyen">
     <meta property="fb:pages" content="100002258842951" data-vmid="fb:pages">
-
+    <meta property="og:sitename" content="tnguyenofficial">
     <meta name="author" content="tnguyenofficial">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="vi_VN">
@@ -24,6 +24,8 @@
     <meta name="copyright" content="TNGUYENOFFICIAL">
     <meta name="author" content="TNGUYENOFFICIAL">
     <meta name="GENERATOR" content="TNGUYENOFFICIAL">
+
+    <link rel="shortlink" href="https://tnguyenofficial.com/">
     {{--SEO--}}
     @yield('meta')
 

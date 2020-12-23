@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('title')
-    ABC
+    TNguyenOficial
 @endsection
 
 @section('script')
@@ -15,7 +15,6 @@
     <meta property="og:image:width" content="474">
     <meta property="og:image:height" content="220">
     <meta property="og:url" content="{{ request()->url() }}" data-vmid="og:url" data-vue-meta="true">
-    <meta property="og:sitename" content="{{ request()->url() }}" data-vmid="og:sitename" data-vue-meta="true">
 
     <meta name="description" content="{{ \Illuminate\Support\Arr::get($category, 'content') }}">
     <meta name="image" content="{{\Illuminate\Support\Arr::get($category, 'file')}}">
@@ -23,7 +22,7 @@
     <meta name="twitter:text:title" content="{{ \Illuminate\Support\Arr::get($category, 'title') }}">
     <meta name="twitter:image" content="{{\Illuminate\Support\Arr::get($category, 'file')}}">
     <meta name="twitter:card" content="summary_large_image">
-    <meta property="article:publisher" content="tnnguyenofficial">
+    <meta property="article:publisher" content="tnguyenofficial">
     <meta name="description" content="{{ \Illuminate\Support\Arr::get($category, 'content') }}">
 @endsection
 
