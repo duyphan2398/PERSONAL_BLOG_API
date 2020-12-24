@@ -6,7 +6,7 @@ use App\Http\Controllers\API\Auth\AuthController;
 use App\Http\Controllers\API\UploadFileController;
 use App\Http\Controllers\API\CategoryController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ContactController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -40,4 +40,5 @@ Route::group(['prefix' => 'cms'], function () {
 
 Route::group(['prefix' => 'blog'], function () {
     Route::get('posts', [PostController::class, 'indexBlog']);
+    Route::post('send-mail', [ContactController::class, 'sendMail']);
 });

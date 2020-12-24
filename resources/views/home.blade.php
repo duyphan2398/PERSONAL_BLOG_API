@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('title')
-    TNguyenOficial
+    TNguyenOfficial
 @endsection
 
 @section('script')
@@ -34,7 +34,7 @@
 
 @section('body')
     <!-- Page Header -->
-    <header id="header" class="masthead" style="background-image: url('{{ \Illuminate\Support\Arr::get($category, 'file') }}')">
+    <header id="header" class="masthead" data-src="{{ \Illuminate\Support\Arr::get($category, 'file') }}"  style="background-image: url('{{ \Illuminate\Support\Arr::get($category, 'file') }}')">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
@@ -51,15 +51,15 @@
     <hr>
     <!-- Main Content -->
     <div class="container">
-        <div class="row">
-            <div id="post-list" class=" col-11 mx-auto">
+        <div class="row mb-3">
+            <div id="post-list" class=" wow col-11 mx-auto">
                 {{--LOAD POST --}}
 
                 {{--LOAD POST --}}
             </div>
             <div class="w-100 col-11" style="text-align: center;">
                 <div id="more" style="display: none">
-                    <img src="{{ asset('images/loading.gif') }}" alt="loading..." alt="">
+                    <a class="more-loading" style="width: 10px; height: 10px"></a>
                 </div>
             </div>
 

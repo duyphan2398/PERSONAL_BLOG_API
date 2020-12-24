@@ -43,6 +43,13 @@
     {{--Axios--}}
     <script src='https://unpkg.com/axios/dist/axios.min.js'></script>
 
+    {{--WowJs--}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous"></script>
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
     <!-- Bootstrap core JavaScript -->
     <script src="{!! asset('vendor/jquery/jquery.min.js') !!}"></script>
     <script src="{!! asset('vendor/bootstrap/js/bootstrap.bundle.min.js') !!}"></script>
@@ -56,14 +63,64 @@
         .active a {
             font-weight: 100 !important;
         }
+
         .ql-video{
             width: 100%;
             height: 35vw;
         }
         .post-content img {
             width: 100%;
-            height: 35vw;
+            height: auto;
             object-fit: fill;
+        }
+
+        .btn-loading {
+            position: relative;
+            color: transparent !important;
+            text-shadow: none !important;
+            pointer-events: none;
+        }
+
+        .btn-loading:after {
+            content: '';
+            display: inline-block;
+            vertical-align: text-bottom;
+            border: 1px solid currentColor;
+            border-right-color: transparent;
+            border-radius: 50%;
+            color: #ffffff;
+            position: absolute;
+            width: 1rem;
+            height: 1rem;
+            left: calc(50% - .5rem);
+            top: calc(50% - .5rem);
+            -webkit-animation: spinner-border .75s linear infinite;
+            animation: spinner-border .75s linear infinite;
+        }
+
+
+        .more-loading {
+            position: relative;
+            color: transparent !important;
+            text-shadow: none !important;
+            pointer-events: none;
+        }
+
+        .more-loading:after {
+            content: '';
+            display: inline-block;
+            vertical-align: text-bottom;
+            border: 1px solid currentColor;
+            border-right-color: transparent;
+            border-radius: 50%;
+            color: #000000;
+            position: absolute;
+            width: 1rem;
+            height: 1rem;
+            left: calc(50% - .5rem);
+            top: calc(50% - .5rem);
+            -webkit-animation: spinner-border .75s linear infinite;
+            animation: spinner-border .75s linear infinite;
         }
     </style>
 </head>

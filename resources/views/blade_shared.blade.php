@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('title')
-    TNguyenOficial
+    TNguyenOfficial
 @endsection
 
 @section('script')
@@ -32,7 +32,7 @@
 
 @section('body')
     <!-- Page Header -->
-    <header id="header" class="masthead" style="background-image: url('{{ \Illuminate\Support\Arr::get($category, 'file') }}')">
+    <header id="header" class="masthead" data-src="{{ \Illuminate\Support\Arr::get($category, 'file') }}"  style="background-image: url('{{ \Illuminate\Support\Arr::get($category, 'file') }}')">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">

@@ -12,6 +12,14 @@
                         </a>
                     </li>
                     <li class="list-inline-item">
+                        <a target="_blank" href="https://vm.tiktok.com/ZSmqxSuF/">
+                <span class="fa-stack fa-lg">
+                  <i class="fas fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-tiktok fa-stack-1x fa-inverse"></i>
+                </span>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
                         <a target="_blank" href="https://www.facebook.com/tnguyenofficial">
                 <span class="fa-stack fa-lg">
                   <i class="fas fa-circle fa-stack-2x"></i>
@@ -20,7 +28,7 @@
                         </a>
                     </li>
                     <li class="list-inline-item">
-                        <a target="_blank" href="https://www.youtube.com/channel/UCXLwAooFvT9X2CoNr_us5FQ/featured">
+                        <a target="_blank" href="https://www.youtube.com/channel/UCXLwAooFvT9X2CoNr_us5FQ">
                 <span class="fa-stack fa-lg">
                   <i class="fas fa-circle fa-stack-2x"></i>
                   <i class="fab fa-youtube fa-stack-1x fa-inverse"></i>

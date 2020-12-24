@@ -1,16 +1,16 @@
 // General attr
-const perPage = 6
+const perPage = 5
 let currentPage = 0
 let lastPage = 1
 let loading = true
 
 function getPostComponent (post) {
 
-  return `<div class="post-preview" style="overflow-wrap: break-word">
+  return `<div class="post-preview animate__animated animate__lightSpeedInLeft" style="overflow-wrap: break-word">
                       <div class="row">
                           <div class="col-lg-4 col-12 order-lg-2 mb-lg-0 mb-2">
                               <img class="post-thumbnail"
-                                   style="border-radius:4px; width: 100%;height: 35vh; object-fit: cover "
+                                   style="border-radius:4px; width: 100%;height: auto; object-fit: cover "
                                    src="` + post.file + `" alt="` + post.short_title + `">
                           </div>
   

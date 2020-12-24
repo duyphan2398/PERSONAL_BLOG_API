@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('title')
-    {{ \Illuminate\Support\Arr::get($post, 'short_title') }}
+    TNguyenOfficial - {{ \Illuminate\Support\Arr::get($post, 'short_title') }}
 @endsection
 
 @section('meta')
@@ -35,7 +35,7 @@
 
 @section('body')
     <!-- Page Header -->
-    <header id="header" class="masthead" style="background-image: url('{{ \Illuminate\Support\Arr::get($post, 'file') }}')">
+    <header id="header" class="masthead" data-src="{{ \Illuminate\Support\Arr::get($post, 'file') }}" style="background-image: url('{{ \Illuminate\Support\Arr::get($post, 'file') }}')">
         <div class="overlay"></div>
         <div class="container">
             <div class="row">
