@@ -57,7 +57,7 @@
             </div>
             <div class="w-100 col-11" style="text-align: center;">
                 <div id="more" style="display: none">
-                    <img src="{{ asset('images/loading.gif') }}" alt="loading..." alt="">
+                    <a class="more-loading" style="width: 10px; height: 10px"></a>
                 </div>
             </div>
 
