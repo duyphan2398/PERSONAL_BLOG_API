@@ -17,13 +17,12 @@ class UpdatePostAction
     public function execute(array $data, Post $post)
     {
         $transformData = Arr::except($data, ['file', 'categories', 'slug', 'custom_slug']);
+
         if ($data['custom_slug']){
-            $slug = Str::random(3).'-'.join('+',explode(' ', str_replace('/', '',Arr::get($transformData, $data['slug']))));
+            $tmpSlug = str_replace('.', '',str_replace('/', '',Arr::get($data, 'slug')));
+            $slug = Str::random(3).'-'.join('+',explode(' ', $tmpSlug));
             $transformData['slug'] = $slug;
         }
-
-        $slug = Str::random(3).'-'.join('+',explode(' ', str_replace('/', '',Arr::get($transformData, 'short_title'))));
-        $transformData['slug'] = $slug;
 
         $post->update($transformData);
         // update category

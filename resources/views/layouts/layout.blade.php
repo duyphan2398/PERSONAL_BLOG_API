@@ -70,7 +70,7 @@
         }
         .post-content img {
             width: 100%;
-            height: 30vw;
+            height: auto;
             object-fit: fill;
         }
 

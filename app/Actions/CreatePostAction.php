@@ -15,9 +15,11 @@ class CreatePostAction
         $transformData = Arr::except($data, ['file', 'categories', 'slug', 'custom_slug']);
 
         if ($data['custom_slug']){
-            $slug = Str::random(3).'-'.join('+',explode(' ', str_replace('/', '',Arr::get($transformData, $data['slug']))));
+            $tmpSlug = str_replace('.', '',str_replace('/', '',Arr::get($data, 'slug')));
+            $slug = Str::random(3).'-'.join('+',explode(' ', $tmpSlug));
         }else {
-            $slug = Str::random(3).'-'.join('+',explode(' ', str_replace('/', '',Arr::get($transformData, 'short_title'))));
+            $tmpSlug = str_replace('.', '',str_replace('/', '',Arr::get($data, 'short_title')));
+            $slug = Str::random(3).'-'.join('+',explode(' ', $tmpSlug));
 
         }
         $transformData['slug'] = $slug;
