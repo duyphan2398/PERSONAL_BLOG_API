@@ -49,18 +49,19 @@
     <hr>
     <!-- Main Content -->
     <div class="container">
-        <div class="row">
-            <div id="post-list" class=" col-11 mx-auto">
+        <div class="row mb-3">
+            <div id="post-list" class=" wow col-11 mx-auto">
                 {{--LOAD POST --}}
 
                 {{--LOAD POST --}}
             </div>
-            <div class="w-100 col-11" style="text-align: center;">
+        </div>
+        <div class="row mb-3">
+            <div class="w-100 col-12" style="text-align: center;">
                 <div id="more" style="display: none">
                     <a class="more-loading" style="width: 10px; height: 10px"></a>
                 </div>
             </div>
-
         </div>
     </div>
     <hr>
