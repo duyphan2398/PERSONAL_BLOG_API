@@ -56,7 +56,7 @@
     <article>
         <div class="container">
             <div class="row">
-                <div class="post-content col-11 mx-auto" style="overflow-wrap: break-word">
+                <div class="post-content col-11 mx-auto text-justify" style="overflow-wrap: break-word">
                     {!! \Illuminate\Support\Arr::get($post, 'content') !!}
                 </div>
             </div>

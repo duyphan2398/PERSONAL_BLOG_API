@@ -172,7 +172,6 @@ img::-moz-selection {
 
 header.masthead {
     margin-bottom: 50px;
-    background: no-repeat center center;
     background-color: #868e96;
     background-attachment: scroll;
     position: relative;
@@ -220,12 +219,12 @@ header.masthead .page-heading .subheading, header.masthead .site-heading .subhea
 
 @media only screen and (min-width: 768px) {
     header.masthead .page-heading h1, header.masthead .site-heading h1 {
-        font-size: 80px
+        font-size: 30px
     }
 }
 
 header.masthead .post-heading h1 {
-    font-size: 35px
+    font-size: 30px
 }
 
 header.masthead .post-heading .meta, header.masthead .post-heading .subheading {
@@ -234,8 +233,8 @@ header.masthead .post-heading .meta, header.masthead .post-heading .subheading {
 }
 
 header.masthead .post-heading .subheading {
-    font-size: 24px;
-    font-weight: 600;
+    font-size: 25px;
+    font-weight: 400;
     margin: 10px 0 30px;
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif
 }
@@ -253,11 +252,11 @@ header.masthead .post-heading .meta a {
 
 @media only screen and (min-width: 768px) {
     header.masthead .post-heading h1 {
-        font-size: 55px
+        font-size: 25px
     }
 
     header.masthead .post-heading .subheading {
-        font-size: 30px
+        font-size: 20px
     }
 }
 
@@ -271,7 +270,7 @@ header.masthead .post-heading .meta a {
 }
 
 .post-preview a .post-title {
-    font-size: 30px;
+    font-size: 25px;
     margin-bottom: 10px
 }
 

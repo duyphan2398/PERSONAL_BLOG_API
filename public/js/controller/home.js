@@ -6,7 +6,7 @@ let loading = true
 
 function getPostComponent (post) {
 
-  return `<div class="post-preview animate__animated animate__lightSpeedInLeft" style="overflow-wrap: break-word">
+  return `<div class="post-preview text-justify animate__animated animate__lightSpeedInLeft" style="overflow-wrap: break-word">
                       <div class="row">
                     
                         <div class="col-lg-4 col-12 order-lg-2 mb-lg-0 mb-2">
