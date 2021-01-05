@@ -15,10 +15,10 @@ class EnsureRequestWantJson
      */
     public function handle($request, Closure $next)
     {
-        $request->headers->set('Access-Control-Allow-Origin', '*');
+        $request->headers->set('Access-Control-Allow-Origin', 'https://www.tnguyenofficial.com');
         $request->headers->set('Access-Control-Allow-Methods', '*');
         $request->headers->set('Access-Control-Allow-Headers', '*');
-        
+
         if ($request->is('*')) {
 
             if ($request->get('Accept') == 'application/json') {
