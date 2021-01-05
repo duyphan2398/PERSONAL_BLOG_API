@@ -26,6 +26,7 @@ class Category extends BaseModel
         'title',
         'content',
         'file_id',
+        'thumbnail',
         'color'
     ];
 

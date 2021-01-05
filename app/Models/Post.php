@@ -27,6 +27,7 @@ class Post extends BaseModel
         'content',
         'admin_id',
         'file_id',
+        'thumbnail',
         'slug',
         'is_active',
         'created_at',

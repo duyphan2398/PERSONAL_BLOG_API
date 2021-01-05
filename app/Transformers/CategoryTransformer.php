@@ -30,7 +30,7 @@ class CategoryTransformer extends Transformer
             'display_name'  => (string) $category->display_name,
             'title'         => (string) $category->title,
             'content'       => (string) $category->content,
-            'file'          => (string) optional($category->file)->path,
+            'file'          => $category->thumbnail,
             'color'         => (string) $category->color
         ];
     }

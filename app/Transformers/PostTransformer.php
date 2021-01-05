@@ -26,7 +26,7 @@ class PostTransformer extends Transformer
             'content'                => (string) $post->content,
             'short_title'            => (string) $post->short_title,
             'short_content'          => (string) $post->short_content,
-            'file'                   => (string) optional($post->file)->path,
+            'file'                   => $post->thumbnail,
             'slug'                   => (string) $post->slug,
             'categories'             => (array) $this->getCategory($post),
             'is_active'              => (bool) $post->is_active,
