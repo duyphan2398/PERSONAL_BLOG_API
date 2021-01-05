@@ -15,6 +15,7 @@ class EnsureRequestWantJson
      */
     public function handle($request, Closure $next)
     {
+        $request->headers->set('Access-Control-Allow-Origin', '*');
         if ($request->is('*')) {
 
             if ($request->get('Accept') == 'application/json') {
