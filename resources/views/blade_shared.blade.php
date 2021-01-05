@@ -5,7 +5,7 @@
 @endsection
 
 @section('script')
-    <script src="{{ asset('js/controller/script_shared.js') }}"></script>
+    <script src="{{ secure_asset('js/controller/script_shared.js') }}"></script>
 @endsection
 
 @section('meta')

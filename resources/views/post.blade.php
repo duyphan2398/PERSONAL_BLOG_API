@@ -26,7 +26,7 @@
 @endsection
 
 @section('script')
-    <script src="{{ asset('js/controller/home.js') }}"></script>
+    <script src="{{ secure_asset('js/controller/home.js') }}"></script>
 @endsection
 
 @section('css')

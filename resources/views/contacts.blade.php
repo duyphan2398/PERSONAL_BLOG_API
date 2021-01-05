@@ -53,7 +53,7 @@
       }
       let token = document.head.querySelector('meta[name="csrf-token"]')
     </script>
-    <script src="{{ asset('js/controller/contact.js') }}"></script>
+    <script src="{{ secure_asset('js/controller/contact.js') }}"></script>
 @endsection
 
 @section('css')
