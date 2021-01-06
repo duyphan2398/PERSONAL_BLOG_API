@@ -40,7 +40,7 @@ class CreatePostAction
                     'type'        => 'IMAGE',
                     'target'      => 'POST',
                     'size'        => request()->file('file')->getSize(),
-                    'extension'   => $uploadFile['extension'],
+                    'extension'   => $data['file']->getClientOriginalExtension(),
                     'mime_type'   => $data['file']->getClientMimeType(),
                 ]);
 
