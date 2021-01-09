@@ -15,7 +15,7 @@ function getPostComponent (post) {
                           </div>
   
                           <div class="col-lg-8 col-12 order-lg-1">
-                              <a class="post-content" href="`+ window.location+'post/'+post.slug+`">
+                              <a class="post-content" href="post/`+post.slug+`">
                                   <h2 class="post-title">
                                       ` + post.short_title + `
                                   </h2>
