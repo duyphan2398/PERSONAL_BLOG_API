@@ -56,6 +56,16 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
+        if($this->isHttpException($exception))
+        {
+            switch ($exception->getStatusCode())
+            {
+                case 404:
+                    return redirect()->route('web.home');
+                    break;
+            }
+        }
+
         if ($request->wantsJson()) {
             $this->convertDefaultException($exception);
 

@@ -18,7 +18,7 @@ use App\Http\Controllers\ContactController;
 |
 */
 
-Route::get('', [HomeController::class, 'index']);
+Route::get('', [HomeController::class, 'index'])->name('web.home');
 Route::get('post/{post:slug}',[HomeController::class, 'getPost']);
 Route::get('stories', [StoryController::class, 'index']);
 Route::get('blogs', [BlogController::class, 'index']);
