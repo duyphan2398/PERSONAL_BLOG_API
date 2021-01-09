@@ -65,4 +65,5 @@
         </div>
     </div>
     <hr>
+    <a href="javascript:void(0)" name="{{\Illuminate\Support\Arr::get($category, 'id')}}" id="categoryId"></a>
 @endsection
