@@ -34,7 +34,7 @@ async function loadList () {
   //loading
   this.loading = true
   $('#more').show()
-  let categoryId = $('#categoryId').attr('name');
+  let categoryId = $('.active').attr('name');
 
   // load data
   await axios.get(location.origin + '/api/blog/posts', {
